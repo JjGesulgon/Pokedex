@@ -17,19 +17,18 @@ export default {
   props: {
     evolutionChain: Object,
   },
-
   data(){
     return{
       pokemonEvoChain: [],
     }
   },
-
   watch:{
     evolutionChain: function(){
       var chain = []
       var chainData = this.evolutionChain.chain
 
       if (this.evolutionChain.chain.species.name == 'eevee'){
+        chain.push({"species_name": this.evolutionChain.chain.species.name})
         for(var i = 0; i <= this.evolutionChain.chain.evolves_to.length-1; i++){
           chain.push({
             "species_name": this.evolutionChain.chain.evolves_to[i].species.name,
@@ -37,8 +36,6 @@ export default {
         }
       }else{
         do {
-          var evoDetails = chainData.evolution_details[0];
-
           chain.push({
             "species_name": chainData.species.name,
           });

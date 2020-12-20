@@ -16,13 +16,11 @@ export default {
   props: {
     pokeList: Array,
   },
-
   data(){
     return {
       pokeListComplete: [],
     }
   },
-
   watch:{
     pokeList: function(){
       if (this.pokeList.length == 0){
@@ -41,13 +39,11 @@ export default {
       });
     }
   },
-
   computed: {
     sortedPokeList: function() {
       return this.pokeListComplete.sort(function(a, b) { return a.id > b.id ? 1 : -1});
     }
   },
-
   methods: {
     viewPokemon(pokemon){
       this.$router.push({ path: '/pokemon', query: { pokemon: pokemon.name } });

@@ -26,12 +26,12 @@
 </template>
 <script>
 import axios from 'axios';
-import aboutComponent from '~/components/pokemonDetail/about-component.vue';
-import profileComponent from '~/components/pokemonDetail/profile-component.vue';
-import statsComponent from '~/components/pokemonDetail/stats-component.vue';
-import strengthsWeaknessesComponent from '~/components/pokemonDetail/strengths-weaknesses-component.vue';
-import MovesComponent from '~/components/pokemonDetail/moves-component.vue';
-import evolutionChainComponent from '~/components/pokemonDetail/evolution-chain-component.vue';
+import aboutComponent from '~/components/pokemon_detail_components/about-component.vue';
+import profileComponent from '~/components/pokemon_detail_components/profile-component.vue';
+import statsComponent from '~/components/pokemon_detail_components/stats-component.vue';
+import strengthsWeaknessesComponent from '~/components/pokemon_detail_components/strengths-weaknesses-component.vue';
+import MovesComponent from '~/components/pokemon_detail_components/moves-component.vue';
+import evolutionChainComponent from '~/components/pokemon_detail_components/evolution-chain-component.vue';
 export default {
   components: { statsComponent, MovesComponent, evolutionChainComponent, strengthsWeaknessesComponent, profileComponent, aboutComponent },
   data(){
@@ -39,16 +39,14 @@ export default {
       pokemonDetails: null,
       species: {},
       evolutionChain:null,
-      ifReady: false,
       color: "",
       type: {},
       flavorTextEntries: [],
     }
   },
-
   created() {
     let pokeName = this.$route.query.pokemon
-
+    
     //get pokemon main information
     axios.get(`https://pokeapi.co/api/v2/pokemon/${pokeName}`)
         .then((res) => {
@@ -63,11 +61,9 @@ export default {
         })
         .then((res) => {
           this.evolutionChain = res.data;
-          this.ifReady = true;
         })
         .catch((error) => {
           console.log(error)
-          this.hasData = false
         });
   },
   watch:{
@@ -75,7 +71,6 @@ export default {
         this.$router.go();
       }
   },
-
   computed: {
     flavorText: function(){
       const seen = new Set();

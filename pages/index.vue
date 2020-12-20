@@ -31,11 +31,9 @@ export default {
       initialPageApi: 'https://pokeapi.co/api/v2/pokemon/'
     };
   },
-
   created(){
     this.getPaginatedData(this.initialPageApi)
   },
-
   methods: {
     getPaginatedData(api){
       this.pokeList = []

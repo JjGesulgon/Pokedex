@@ -13,7 +13,6 @@ export default {
   props: {
     flavorTextEntries: Array
   },
-
   watch:{
     flavorTextEntries: function(){
       // get descriptions and remove \f 
