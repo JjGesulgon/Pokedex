@@ -14,7 +14,12 @@
       <div class="text-sm lg:flex-grow">
       </div>
       <div class="tracking-tight">
-        <input class="border-2 border-gray-300 bg-white h-10 pl-2 pr-8 rounded-lg text-sm focus:outline-none" type="search" name="search" placeholder="Search">
+        <form v-on:submit.prevent="searchPokemon">
+          <n-link to="/" class="block mt-4 lg:inline-block lg:mt-0 hover:underline mr-4 focus:outline-none">
+            Pokemon List
+          </n-link>
+          <input class="border-2 border-gray-300 bg-white h-10 pl-2 pr-8 rounded-lg text-black text-sm focus:outline-none" v-model="searchedText" type="search" name="search" placeholder="Search">
+        </form>
       </div>
     </div>
   </nav>
@@ -44,7 +49,8 @@ export default {
   data() {
     return {
       open: false,
-      scrollPosition: null
+      scrollPosition: null,
+      searchedText: '',
     };
   },
   mounted() {
@@ -57,6 +63,14 @@ export default {
 
     updateScroll() {
        this.scrollPosition = window.scrollY
+    },
+
+    searchPokemon(){
+      if(this.searchedText == ''){
+        this.$router.push({ path: '/'}); 
+      }else{
+        this.$router.push({ path: '/pokemon', query: { pokemon: this.searchedText.toLowerCase() }}); 
+      }
     }
   }
 }

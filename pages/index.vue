@@ -1,9 +1,9 @@
 <template>
   <div class="container mx-auto">
     <card-component :pokeList="pokeList"></card-component>
-    <div class="mt-10 mb-16">
+    <div class="mt-10 mb-16 ml-1">
       <span v-if="paginationNav.previous != null">
-        <button class="rounded-lg p-2 bg-gray-700 hover:bg-red-700 focus:outline-none focus:ring-2 text-white font-light w-50" 
+        <button class="rounded-lg p-2 bg-gray-700 hover:bg-red-700 focus:outline-none focus:ring-2 text-white font-light" 
                 @click.prevent="getPaginatedData(paginationNav.previous)">
           <font-awesome-icon :icon="['fas', 'angle-left']"/>&nbsp;Prev
         </button>
