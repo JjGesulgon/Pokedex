@@ -14,6 +14,9 @@ $ npm run dev
 $ npm run build
 $ npm run start
 
+# test using jest
+$ npm run test
+
 # generate static project
 $ npm run generate
 ```
