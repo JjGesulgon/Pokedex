@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="border rounded-lg overflow-hidden">
-      <div class="text-xl font-light capitalize text-center text-white" :style="bgColor">
+      <div class="text-xl font-light capitalize text-center" :class="{ 'text-white': color != 'yellow' }" :style="bgColor">
         {{ name }}
       </div>
       <div class=" bg-gray-200">
