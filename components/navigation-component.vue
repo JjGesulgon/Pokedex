@@ -60,11 +60,9 @@ export default {
     toggle() {
     	this.open = !this.open
     },
-
     updateScroll() {
        this.scrollPosition = window.scrollY
     },
-
     searchPokemon(){
       if(this.searchedText == ''){
         this.$router.push({ path: '/'}); 
