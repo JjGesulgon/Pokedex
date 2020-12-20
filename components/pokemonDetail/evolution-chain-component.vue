@@ -50,7 +50,5 @@ export default {
       this.pokemonEvoChain = chain
     }
   },
-
-
 }
 </script>
