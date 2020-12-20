@@ -24,26 +24,6 @@
     </div>
   </nav>
 </template>
-<style scoped>
-  @media screen and (min-width: 1025px) {
-    .nav-container{
-      padding-left: 15rem;
-      padding-right: 15rem;
-    }
-  }
-
-  .onScrollColor {
-    -moz-transition: all .2s ease-in;
-    -o-transition: all .2s ease-in;
-    -webkit-transition: all .2s ease-in;
-    transition: all .2s ease-in;
-    opacity: 90%;
-    background-color: white !important;
-    color: black
-  }
-
-</style>
-
 <script>
 export default {
   data() {
@@ -73,3 +53,21 @@ export default {
   }
 }
 </script>
+<style scoped>
+  @media screen and (min-width: 1025px) {
+    .nav-container{
+      padding-left: 15rem;
+      padding-right: 15rem;
+    }
+  }
+
+  .onScrollColor {
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+    opacity: 90%;
+    background-color: white !important;
+    color: black
+  }
+</style>
