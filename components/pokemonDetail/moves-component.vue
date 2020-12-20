@@ -4,7 +4,7 @@
     <hr>
     <br>
     <div>
-      <span v-for="move in moves" :key="move.name"> {{move.move.name}}&#44; &nbsp;</span>
+      <span v-for="move in moves" :key="move.name"> {{move.move.name}}&#44;</span>
     </div>
   </div>
 </template>

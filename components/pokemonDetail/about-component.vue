@@ -18,9 +18,7 @@ export default {
     flavorTextEntries: function(){
       // get descriptions and remove \f 
       this.flavorTextEntries.forEach(el => {
-        for (var i = 0; i < specialChars.length; i++) {
-          el.flavor_text = el.flavor_text.replace("\f", " ");
-        }
+        el.flavor_text = el.flavor_text.replace("\f", " ");
       });
     }
   }
