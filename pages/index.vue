@@ -8,7 +8,7 @@
           <font-awesome-icon :icon="['fas', 'angle-left']"/>&nbsp;Prev
         </button>
       </span>
-      <span>
+      <span v-if="paginationNav.next != null">
         <button class="rounded-lg p-2 bg-gray-700 hover:bg-red-700 focus:outline-none focus:ring-2 text-white font-light"
                 @click.prevent="getPaginatedData(paginationNav.next)">
           Next&nbsp;<font-awesome-icon :icon="['fas', 'angle-right']"/>
