@@ -1,16 +1,16 @@
 import { shallowMount } from "@vue/test-utils";
-import NavigationComponent from "../navigation-component";
+import CardComponent from "../card-component";
 
 
 const factory = () => {
-  return shallowMount(NavigationComponent, {
+  return shallowMount(CardComponent, {
   });
 };
 
-describe("NavigationComponent", () => {
+describe("CardComponent", () => {
   test("mounts properly", () => {
     const wrapper = factory();
-    expect(wrapper.isVueInstance()).toBeTruthy();
+    expect(wrapper.exists()).toBeTruthy()
   });
 
   test("renders properly", () => {
